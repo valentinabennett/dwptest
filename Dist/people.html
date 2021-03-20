@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Just test</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <script>
+      fetch("/api/people")
+        .then((p) => p.json())
+        .then((data) => {
+          let formatted_data = "";
+          data.forEach((element) => {
+            formatted_data +=
+              '<div class="p-row"><strong>' + element + "</strong></div>";
+          });
+
+          let people_div = document.getElementById("people-list");
+          people_div.innerHTML = formatted_data;
+        })
+        .catch(
+          (error) =>
+            (document.getElementById("people-list").innerHTML =
+              '<div class="text-danger">' + err.message + "</div>")
+        );
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="n-title">People of London</h1>
+      <div id="people-list">Loading...</div>
+    </div>
+    <div>
+      <a href="javascript:history.back()">Go back</a>
+    </div>
+  </body>
+</html>
