@@ -7,16 +7,18 @@ const app = express();
 
 const people = require("./routes/people");
 
-const port = process.env.PORT || 3800;
 app.use(favicon(path.join(__dirname, "Dist/favicon.ico")));
 app.use(express.static(path.join(__dirname, "Dist")));
 app.use("/api/people", people);
 
-app.get("/", function (req, res) {
+app.get("*/", function (req, res) {
   res.sendFile(path.join(__dirname, "Dist/index.html"));
 });
 
-app.listen(port);
-console.log("Listening on port: " + port);
+app.set("port", process.env.PORT || 3000);
+
+app.listen(app.get("port"));
+
+console.log("Listening on port: " + app.get("port"));
 
 module.exports = app;

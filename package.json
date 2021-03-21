@@ -1,14 +1,12 @@
 {
   "name": "dwptest",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.16.3"
-  },
+  
   "description": "code test",
   "main": "server.js",
   "scripts": {
     "test": "mocha './app/**/*.spec.js' --watch",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
