@@ -11,7 +11,7 @@
           let formatted_data = "";
           data.forEach((element) => {
             formatted_data +=
-              '<div class="p-row"><strong>' + element + "</strong></div>";
+              '<li class="p-row"><strong>' + element + "</strong></li>";
           });
 
           let people_div = document.getElementById("people-list");
@@ -27,7 +27,9 @@
   <body>
     <div class="container">
       <h1 class="n-title">People of London</h1>
-      <div id="people-list">Loading...</div>
+      <ol id="people-list">
+        Loading...
+      </ol>
     </div>
     <div>
       <a href="javascript:history.back()">Go back</a>

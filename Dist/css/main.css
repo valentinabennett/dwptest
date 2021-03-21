@@ -10,7 +10,7 @@
     color:rgb(136, 10, 10);
 }
 
-li{
+li.nav-item{
     list-style: none;
 }
 
